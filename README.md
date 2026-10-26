@@ -15,10 +15,6 @@ width="100%" alt="Nx - Smart, Extensible Build Framework"></p>
   - [Problem](#problem)
 - [License](#license)
 
-**NOTE:** This documentation is for version `2.x.x+` which now uses the GitHub API to track successful workflows. You can find documentation for version `1.x.x` which used GIT tags [here](https://github.com/step-security/nx-set-shas/blob/v1/README.md).
-
-**NOTE:** The `v4` does no longer support deprecated Node versions. Supported version is `Node v18+`.
-
 ## Example Usage
 
 **.github/workflows/ci.yml**
@@ -33,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     name: My Job
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
           fetch-depth: 0
@@ -155,7 +151,7 @@ jobs:
     container: my-org/my-amazing-image:v1.2.3-fresh
     name: My Job
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
           fetch-depth: 0
@@ -209,3 +205,5 @@ This action enables you to find:
 [MIT](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2021-present Narwhal Technologies Inc.
+
+Copyright (c) 2026 StepSecurity.

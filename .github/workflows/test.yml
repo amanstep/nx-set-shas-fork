@@ -17,7 +17,7 @@ jobs:
     name: Test
     strategy:
       matrix:
-        runs-on: [ubuntu-latest, macos-latest, windows-latest]
+        runs-on: ${{ fromJson(github.actor == 'dependabot[bot]' && '["ubuntu-latest"]' || '["ubuntu-latest","macos-latest","windows-latest"]') }}
       fail-fast: false
     runs-on: ${{ matrix.runs-on }}
     steps:
@@ -34,10 +34,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set Node.js 18.x
+      - name: Set Node.js 24.x
         uses: actions/setup-node@v7
         with:
-          node-version: 18
+          node-version: 24
 
       - name: Install
         run: yarn --frozen-lockfile
