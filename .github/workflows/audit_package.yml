@@ -15,6 +15,14 @@ on:
         description: "Node.js version to use"
         required: false
         default: "24"
+      script:
+        description: "Build script to bundle the action"
+        required: false
+        default: "yarn build"
+      package_manager:
+        description: "Package manager to use"
+        required: false
+        default: "yarn"
   schedule:
     - cron: "0 0 * * 1"
 
@@ -25,6 +33,16 @@ jobs:
       force: ${{ inputs.force || false }}
       base_branch: ${{ inputs.base_branch || 'main' }}
       node_version: ${{ inputs.node_version || '24' }}
+
+  audit-fix-v4.3.0:
+    if: github.event_name == 'schedule'
+    uses: step-security/reusable-workflows/.github/workflows/audit_fix.yml@v1
+    with:
+      force: false
+      base_branch: v4.3.0-main
+      working_directory: ${{ inputs.working_directory }}
+      script: ${{ inputs.script || 'yarn build' }}
+      package_manager: ${{ inputs.package_manager || 'yarn' }}
 
 permissions:
   contents: write
