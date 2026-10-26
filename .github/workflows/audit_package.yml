@@ -34,16 +34,6 @@ jobs:
       base_branch: ${{ inputs.base_branch || 'main' }}
       node_version: ${{ inputs.node_version || '24' }}
 
-  audit-fix-v4.3.0:
-    if: github.event_name == 'schedule'
-    uses: step-security/reusable-workflows/.github/workflows/audit_fix.yml@v1
-    with:
-      force: false
-      base_branch: v4.3.0-main
-      working_directory: ${{ inputs.working_directory }}
-      script: ${{ inputs.script || 'yarn build' }}
-      package_manager: ${{ inputs.package_manager || 'yarn' }}
-
 permissions:
   contents: write
   pull-requests: write
