@@ -10,7 +10,12 @@ on:
         description: "Node.js version to use"
         required: false
         default: "24"
-
+      backport:
+        description: "Backport/patch release from a maintenance branch (keeps current latest, skips v-major tag move)"
+        required: false
+        type: boolean
+        default: false
+        
 permissions:
   contents: read
 
@@ -25,3 +30,4 @@ jobs:
     with:
       tag: "${{ github.event.inputs.tag }}"
       node_version: ${{ inputs.node_version || '24' }}
+      backport: ${{ inputs.backport || false }}
