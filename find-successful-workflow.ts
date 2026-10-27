@@ -3,7 +3,7 @@ import * as github from '@actions/github';
 import { spawnSync } from 'child_process';
 import { existsSync } from 'fs';
 import * as fs from 'fs';
-import { GitHub } from '@actions/github/lib/utils';
+import type { getOctokit } from '@actions/github';
 import axios, { isAxiosError } from 'axios';
 
 async function validateSubscription() {
@@ -272,7 +272,7 @@ async function findSuccessfulCommit(
  * Get first existing commit
  */
 async function findExistingCommit(
-  octokit: InstanceType<typeof GitHub>,
+  octokit: ReturnType<typeof getOctokit>,
   branchName: string,
   shas: string[],
 ): Promise<string | undefined> {
@@ -288,7 +288,7 @@ async function findExistingCommit(
  * Check if given commit is valid
  */
 async function commitExists(
-  octokit: InstanceType<typeof GitHub>,
+  octokit: ReturnType<typeof getOctokit>,
   branchName: string,
   commitSha: string,
 ): Promise<boolean> {

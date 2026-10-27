@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
-import { GitHub } from '@actions/github/lib/utils';
+import type { getOctokit } from '@actions/github';
 import axios, { isAxiosError } from 'axios';
 import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
@@ -277,7 +277,7 @@ async function findSuccessfulCommit(
  * Get first existing commit
  */
 async function findExistingCommit(
-  octokit: InstanceType<typeof GitHub>,
+  octokit: ReturnType<typeof getOctokit>,
   branchName: string,
   shas: string[],
 ): Promise<string | undefined> {
@@ -293,7 +293,7 @@ async function findExistingCommit(
  * Check if given commit is valid
  */
 async function commitExists(
-  octokit: InstanceType<typeof GitHub>,
+  octokit: ReturnType<typeof getOctokit>,
   branchName: string,
   commitSha: string,
 ): Promise<boolean> {
