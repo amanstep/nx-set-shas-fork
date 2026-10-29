@@ -9,7 +9,7 @@
     "format": "prettier --write ."
   },
   "bugs": {
-    "url": "https://github.com/step-security/nx-set-shas/issues"
+    "url": "https://github.com/amanstep/nx-set-shas/issues"
   },
   "engines": {
     "node": ">=18"
@@ -19,7 +19,7 @@
     "yarn": "1.22.21"
   },
   "packageManager": "yarn@1.22.21",
-  "homepage": "https://github.com/step-security/nx-set-shas#readme",
+  "homepage": "https://github.com/amanstep/nx-set-shas#readme",
   "dependencies": {
     "@actions/core": "^2.0.0",
     "@actions/github": "^8.0.0",
