@@ -1,4 +1,4 @@
-[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+NOTE: THIS FORK IS FOR TEST PURPOSES DO NOT USE IT IN YOUR CI
 
 <p style="text-align: center;"><img src=".github/assets/nx.png" 
 width="100%" alt="Nx - Smart, Extensible Build Framework"></p>
