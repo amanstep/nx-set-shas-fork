@@ -207,3 +207,5 @@ This action enables you to find:
 Copyright (c) 2021-present Narwhal Technologies Inc.
 
 Copyright (c) 2026 StepSecurity.
+
+Copyright (c) 2026 amanstep.
